@@ -3,23 +3,13 @@
 import Image from "next/image";
 import { useState } from "react";
 import { ContentCard } from "../interfaces/feed";
+import { formatNumberShortScale } from "../utils/number.utils";
 
-function formatNumberShortScale(number: number) {
-  const abbreviations = ["", "k", "M", "B", "T"];
-  const tier = Math.floor(Math.log10(Math.abs(number)) / 3);
-
-  if (tier === 0) return number;
-
-  const suffix = abbreviations[tier];
-  const scale = Math.pow(10, tier * 3);
-  const scaled = number / scale;
-  const fixed = scaled.toFixed(1);
-  const numberToDisplay = fixed.endsWith(".0") ? scaled.toFixed(0) : fixed;
-
-  return numberToDisplay + suffix;
+interface FeedCardCommentsProps {
+  item: ContentCard;
 }
 
-export function FeedCardComments({ item }: { item: ContentCard }) {
+export function FeedCardComments({ item }: FeedCardCommentsProps) {
   const [showComments, setShowComments] = useState(false);
 
   const commentsCount = item.comments.length;

@@ -4,7 +4,11 @@ import { getPostAnchor } from "../services/feed.service";
 import { FeedCardBody } from "./FeedCardBody";
 import { FeedCardComments } from "./FeedCardComments";
 
-export function FeedCard({ item }: { item: ContentCard }) {
+interface FeedCardProps {
+  item: ContentCard;
+}
+
+export function FeedCard({ item }: FeedCardProps) {
   return (
     <div
       className="bg-gray-900 rounded-lg shadow-md flex flex-col items-stretch"

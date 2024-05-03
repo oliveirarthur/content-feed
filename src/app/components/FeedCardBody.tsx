@@ -4,7 +4,11 @@ import { ContentCard } from "../interfaces/feed";
 import { getPostAnchor } from "../services/feed.service";
 import { FeedCardAuthor } from "./FeedCardAuthor";
 
-export function FeedCardBody({ item }: { item: ContentCard }) {
+interface FeedCardBodyProps {
+    item: ContentCard;
+}
+
+export function FeedCardBody({ item }: FeedCardBodyProps) {
   const [showFullContent, setShowFullContent] = useState(false);
 
   const toggleFullContent = () => setShowFullContent(!showFullContent);
