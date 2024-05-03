@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ContentCard } from "../interfaces/feed";
 import { getPostAnchor } from "../services/feed.service";
 import { FeedCardBody } from "./FeedCardBody";
+import { FeedCardComments } from "./FeedCardComments";
 
 export function FeedCard({ item }: { item: ContentCard }) {
   return (
@@ -17,9 +18,7 @@ export function FeedCard({ item }: { item: ContentCard }) {
         height={100}
       ></Image>
       <FeedCardBody item={item} />
-      <div className="border-t border-gray-600 px-4 py-2 mt-auto">
-        <p className="text-gray-500 text-sm">{item.comments.length} Comments</p>
-      </div>
+      <FeedCardComments item={item} />
     </div>
   );
 }
