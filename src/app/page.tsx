@@ -10,9 +10,9 @@ export default async function Home() {
   });
 
   return (
-    <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 m-4">
+    <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 m-4" data-testid="feed-grid">
       {sortedFeed?.map((item) => (
-        <FeedCard item={item} />
+        <FeedCard key={item.id} item={item} />
       ))}
     </main>
   );

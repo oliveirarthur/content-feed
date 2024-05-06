@@ -12,6 +12,7 @@ export function FeedCard({ item }: FeedCardProps) {
   return (
     <div
       className="bg-gray-900 rounded-lg shadow-md flex flex-col items-stretch"
+      data-testid="feed-card"
       id={getPostAnchor(item.id)}
     >
       <Image
