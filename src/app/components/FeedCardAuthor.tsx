@@ -9,5 +9,5 @@ export function FeedCardAuthor({ item }: FeedCardAuthorProps) {
     .filter(Boolean)
     .join(", ");
 
-  return <p className="mb-2">{authorFullname}</p>;
+  return <span className="mb-2">{authorFullname}</span>;
 }

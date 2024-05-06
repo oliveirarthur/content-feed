@@ -5,7 +5,7 @@ import { getPostAnchor } from "../services/feed.service";
 import { FeedCardAuthor } from "./FeedCardAuthor";
 
 interface FeedCardBodyProps {
-    item: ContentCard;
+  item: ContentCard;
 }
 
 export function FeedCardBody({ item }: FeedCardBodyProps) {
@@ -18,14 +18,12 @@ export function FeedCardBody({ item }: FeedCardBodyProps) {
       <div className="grid grid-cols-2">
         <div>
           <h2 className="text-xl font-bold mb-2">{item.textData.title}</h2>
-          <h3 className="text-xl font-semibold mb-2">
-            {item.textData.subTitle}
-          </h3>
         </div>
-        <div className="text-right">
+        <div className="text-right w-auto">
           <FeedCardAuthor item={item} />
         </div>
       </div>
+      <h3 className="text-l font-semibold mb-2">{item.textData.subTitle}</h3>
       <p
         className={`text-gray-400 text-justify ${
           !showFullContent && "line-clamp-3"
